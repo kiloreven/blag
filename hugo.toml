@@ -1,0 +1,4 @@
+baseURL = 'https://tla.wtf/'
+languageCode = 'en-us'
+title = 'Three Letter Acronym'
+theme = 'ananke'

@@ -1,12 +1,12 @@
 +++
 title = 'Improving Django testing with seed database'
-date = 2024-02-05T20:30:00+01:00
+date = 2024-02-05T19:30:00+01:00
 draft = false
 +++
 
 > The code used as example in this post can be found in [this git repo](https://github.com/kiloreven/demo-django-seed-db)
 
-At FOSDEM24, [Danny Biasiolli](https://www.dennybiasiolli.com/) gave a [talk on optimizing Django migrations for testing](https://fosdem.org/2024/schedule/event/fosdem-2024-1894-django-migrations-friend-or-foe-optimize-them-for-testing/). This talk has a great run-through of the migration flow in Django, and different ways to improve the time and resources spent applying Django migrations. This can be further improved by using a seed database, especially in CI/CD pipelines.
+At FOSDEM24, [Danny Biasiolli](https://www.dennybiasiolli.com/) gave an excellent [talk on optimizing Django migrations for testing](https://fosdem.org/2024/schedule/event/fosdem-2024-1894-django-migrations-friend-or-foe-optimize-them-for-testing/). This talk has a great run-through of the migration flow in Django, and different ways to improve the time and resources spent applying Django migrations. This can be further improved by using a seed database, especially in CI/CD pipelines.
 
 # Seed databases
 A seed database contains an initial set of data, for instance a set of migrations and/or fixtures. Using seed databases in a Django workflow can be really useful when doing iterative development that requires flushing the DB, like migrations or CI pipeline setup.
@@ -33,9 +33,9 @@ If you're using `docker-compose` for local development, you can stop the databas
 
 `📁 Commands for flushing a Docker volume`
 ``` bash
-docker-compose down
-docker volume rm demo-django-seed-db_database
-docker-compose up -d
+$ docker-compose down
+$ docker volume rm demo-django-seed-db_database
+$ docker-compose up -d
 ```
 
 Once your clean database is up, you run your migrations as usual.
@@ -43,7 +43,7 @@ Once your clean database is up, you run your migrations as usual.
 `📁 Running Django migrations through Poetry`
 ``` bash
 # Example using poetry
-poetry run ./app/manage.py migrate
+$ poetry run ./app/manage.py migrate
 ```
 
 ## Dump contents of database to file
@@ -63,8 +63,8 @@ This makes the process simple and reproducible.
 
 `📁 Running DB dumping script`
 ``` bash
-chmod +x dump-db.sh
-./dump-db.sh
+$ chmod +x dump-db.sh
+$ ./dump-db.sh
 ```
 
 ## Add file to code tree
@@ -177,7 +177,8 @@ Bringing the project up the empty database (`docker-compose up -d`) will load th
 
 `📁 Running Django-migrations locally`
 ``` bash
-poetry run ./app/manage.py migrate
+$ poetry run ./app/manage.py migrate
+
 Operations to perform:
   Apply all migrations: admin, app, auth, contenttypes, sessions
 Running migrations:

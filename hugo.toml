@@ -1,4 +1,25 @@
 baseURL = 'https://tla.wtf/'
 languageCode = 'en-us'
 title = 'Three Letter Acronym'
-theme = 'ananke'
+theme = 'nightfall'
+
+[params]
+user = "kfh"
+hostname = "tla.wtf"
+footerHtml = 'CC BY-NC-SA <a class="footerLink" href="https://github.com/kiloreven">kiloreven@github</a> | <a href="https://github.com/kiloreven/blag" class="footerLink">Source</a> | <a href="https://chaos.social/@kfh" rel="me" class="footerLink">Mastodon</a>'
+readingTime = false
+
+[params.author]
+name = "kfh"
+email = "kfh@tla.wtf"
+
+[menu]
+[[menu.header]]
+name = "posts"
+weight = 0
+url = "/posts"
+
+[[params.social]]
+key = 0
+name = "mastodon"
+url = "https://chaos.social/@kfh"

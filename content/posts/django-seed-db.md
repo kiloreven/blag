@@ -6,7 +6,7 @@ draft = false
 
 > The code used as example in this post can be found in [this git repo](https://github.com/kiloreven/demo-django-seed-db)
 
-At FOSDEM24, [Danny Biasiolli](https://www.dennybiasiolli.com/) gave an excellent [talk on optimizing Django migrations for testing](https://fosdem.org/2024/schedule/event/fosdem-2024-1894-django-migrations-friend-or-foe-optimize-them-for-testing/). This talk has a great run-through of the migration flow in Django, and different ways to improve the time and resources spent applying Django migrations. This can be further improved by using a seed database, especially in CI/CD pipelines.
+At FOSDEM24, [Denny Biasiolli](https://www.dennybiasiolli.com/) gave an excellent [talk on optimizing Django migrations for testing](https://fosdem.org/2024/schedule/event/fosdem-2024-1894-django-migrations-friend-or-foe-optimize-them-for-testing/). This talk has a great run-through of the migration flow in Django, and different ways to improve the time and resources spent applying Django migrations. This can be further improved by using a seed database, especially in CI/CD pipelines.
 
 # Seed databases
 A seed database contains an initial set of data, for instance a set of migrations and/or fixtures. Using seed databases in a Django workflow can be really useful when doing iterative development that requires flushing the DB, like migrations or CI pipeline setup.
